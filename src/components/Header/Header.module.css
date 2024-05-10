@@ -13,8 +13,7 @@
 }
 
 .lista {
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
 .lista_item {
@@ -29,6 +28,9 @@
 .lista_item_link {
     text-decoration: none;
 }
+.carrinho{
+    display: none;
+}
 
 @media screen and (min-width:1024px) {
     .container {
@@ -36,7 +38,10 @@
         max-width: 1024px;
         margin: 0 auto;
     }
-
+    .lista{
+        display: flex;
+        justify-content: center;
+    }
     .logo {
         width: 100px;
         height: 100px;
@@ -45,6 +50,7 @@
         width: 150px;
     }
     .carrinho {
+        display: flex;
         size: 100px;
     }
 }

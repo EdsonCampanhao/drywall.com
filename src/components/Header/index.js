@@ -1,5 +1,6 @@
 import styles from './Header.module.css';
 import { IoMdCart } from "react-icons/io";
+import MenuHamburguer from '../MenuHamburguer';
 
 
 export default function Header(){
@@ -18,9 +19,11 @@ export default function Header(){
                         <a className={styles.lista_item_link}> institucional </a>
                     </li>
                 </ul>
+
                 <a>
                     <IoMdCart size={32} className={styles.carrinho}/>
                 </a>
+                <MenuHamburguer></MenuHamburguer>
             </div>
         </header>
     )
