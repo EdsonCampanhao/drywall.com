@@ -15,8 +15,8 @@ export default function MenuHamburguer() {
     return (
         <div className={styles.menu}>
             <Menu >
-                <MenuButton>
-                <IoMenu size={32}></IoMenu>
+                <MenuButton bgColor='transparent' border='none'>
+                <IoMenu color='white' size={32}></IoMenu>
                 </MenuButton>
                 <MenuList padding='6px' borderRadius='15px' bgColor='rgba(149, 148, 148, 1)'>
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>calculadora de materiais</a></MenuItem>
