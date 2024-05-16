@@ -1,4 +1,5 @@
 import styles from "./MenuHamburguer.module.css";
+import Link from "next/link";
 import {
     Menu,
     MenuButton,
@@ -19,10 +20,10 @@ export default function MenuHamburguer() {
                 <IoMenu color='white' size={32}></IoMenu>
                 </MenuButton>
                 <MenuList padding='6px' borderRadius='15px' bgColor='rgba(149, 148, 148, 1)'>
-                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>carrinho</a></MenuItem>
-                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>calculadora de materiais</a></MenuItem>
-                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>produtos</a></MenuItem>
-                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>institucional</a></MenuItem>
+                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/shopping_cart' className={styles.item}>carrinho</Link></MenuItem>
+                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/calculator' className={styles.item}>calculadora de materiais</Link></MenuItem>
+                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/products' className={styles.item}>produtos</Link></MenuItem>
+                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/institucional' className={styles.item}>institucional</Link></MenuItem>
                 </MenuList>
             </Menu>
         </div>
