@@ -19,6 +19,7 @@ export default function MenuHamburguer() {
                 <IoMenu color='white' size={32}></IoMenu>
                 </MenuButton>
                 <MenuList padding='6px' borderRadius='15px' bgColor='rgba(149, 148, 148, 1)'>
+                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>carrinho</a></MenuItem>
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>calculadora de materiais</a></MenuItem>
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>produtos</a></MenuItem>
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><a className={styles.item}>institucional</a></MenuItem>

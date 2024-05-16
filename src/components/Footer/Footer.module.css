@@ -1,0 +1,58 @@
+.footer{
+    padding: 12px 0 ;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(108, 108, 112, 1) 66%, rgba(149, 148, 148, 1) 100%);
+    text-align: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    padding:0 8px;
+    margin: 12px 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    overflow: hidden;
+}
+.logo{
+    width: 200px;
+}
+.endereco{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.endereco h2{
+    color: #fff;
+}
+.redes{
+   display: flex; 
+   justify-content: center;
+   align-items:center;
+   padding-bottom: 12px;
+}
+.redes h2{
+    text-align: start ;
+    font-size: 16px;
+    width: 150px;
+    color: #fff;
+}
+@media screen and (min-width:1024px) {
+
+    .container {
+        max-width: 1024px;
+        margin: 24px auto;
+    }
+    .container{
+        gap: 40px;
+    }
+    
+}

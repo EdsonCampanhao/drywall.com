@@ -149,7 +149,7 @@ html{
   font-size: 16px;
 }
 h1,h2,h3,h4,h5{
-  font-size: 48px ;
+  font-size: 24px ;
   font-weight: 700;
   color: var(--black);
 }
@@ -157,7 +157,7 @@ h1,h2,h3,h4,h5{
   html{
     font-size: 24px;
   }h1,h2,h3,h4,h5{
-    font-size: 64px ;
+    font-size: 32px ;
     font-weight: 700;
     color: var(--black);
   }
