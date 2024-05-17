@@ -4,9 +4,17 @@
     display: flex;
     justify-content: center;
     padding:0 8px;
+    background-image: url('/img/faxada.png');
+    background-position: center;
+    background-size: contain;
+    height: 400px;
+    background-repeat:no-repeat;
+    margin-bottom: 24px;
+
 }
 .banner{
     display: none;
+    
 }
 .container_differences{
     display: flex;
@@ -32,9 +40,44 @@
     gap: 6px;
     width: 115px;
 }
+.container_products{
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    justify-content: center;
+}
+.product_wrapper{
+    padding: 8px;
+    display: flex;
+    overflow: auto;
+
+    gap: 12px;
+}
+.container_cta{
+    margin: 32px 0;
+    display: flex;
+    justify-content: center;
+}
+.cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url('/img/calculadora.png');
+    background-position: center;
+    background-size: 400px;
+    background-repeat: no-repeat;
+    width: 370px;
+    height: 200px;
+    padding-top: 40px;
+}
 
 
 @media screen and (min-width:1024px) {
+.container{
+        background-image: none;
+}
 .banner{
     width: 1024px;
     display: block;
@@ -58,6 +101,19 @@
     align-items: center;
     gap: 18px;
     width: 115px;
+}
+.container_products{
+    margin: 48px 0;
+}
+.container_cta{
+    margin: 64px 0;
+}
+.cta{
+    width: 1024px;
+    background-size: 1024px;
+    background-position: center;
+    
+    
 }
 
 }

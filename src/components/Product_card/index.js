@@ -6,7 +6,7 @@ export default function Product_card(props){
     return(
         <div className={style.card}>
             <img src={props.path} className={style.product} />
-            <h3>{props.product}</h3>
+            <h3 className={style.product_text}>{props.product}</h3>
             
             <div className={style.car}>
                 <IoMdCart size={32} />

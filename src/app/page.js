@@ -4,7 +4,7 @@ import { TbPigMoney } from "react-icons/tb";
 import { SlEarphonesAlt } from "react-icons/sl";
 import Product_card from '@/components/Product_card';
 import products from '@/components/products';
-
+import NewButton from '@/components/Button';
 
 
 
@@ -19,7 +19,7 @@ export default function Home() {
       <section className={style.container_differences}>
         <ul className={style.differences}>
           <li className={style.differences_item}>
-            <IoDiamondOutline size={32}/>
+            <IoDiamondOutline size={32} />
             <p className={style.differences_text}>Produtos de qualidade</p>
           </li>
           <li className={style.differences_item}>
@@ -35,16 +35,28 @@ export default function Home() {
 
       <section className={style.container_products}>
 
+        <h2> Nossos produtos: </h2>
         <ul className={style.product_wrapper}>
 
-          {Object.keys(products).map((key)=>{
-            return(
-          <Product_card path={products[key].img} key={key} product={products[key].nome}></Product_card>
-          )})
-           }
+          {Object.keys(products).map((key) => {
+            return (
+              <li key={key}>
+                <Product_card path={products[key].img}  product={products[key].nome}></Product_card>
+              </li>
+            )
+          })
+          }
 
         </ul>
-       
+
+      </section>
+
+      <section className={style.container_cta}>
+
+          <div className={style.cta}>
+            <NewButton bgColor='#e6e600' color='black'> fazer cálculo! </NewButton>
+          </div>
+
       </section>
 
     </main>

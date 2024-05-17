@@ -1,0 +1,12 @@
+.button{
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 8px;
+    transition: .5s;
+}
+.text{
+    font-weight: 300;
+}
+.button:hover{
+    transform: scale(1.2);
+}
