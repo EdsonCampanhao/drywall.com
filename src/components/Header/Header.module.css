@@ -23,6 +23,13 @@
     align-items: center;
     text-align: center;
     font-weight: 500;
+    border-radius: 12px;
+    transition: .5s;
+    animation: ease-in;
+}
+.active{
+   background-color: #fff;
+   color: black;
 }
 
 .lista_item_link {
@@ -30,8 +37,13 @@
 }
 .carrinho{
     display: none;
+    pointer-events: none;
 }
-
+.link_cart{
+    transition: 0.5s;
+    border-radius: 50px;
+    padding: 6px;
+}
 @media screen and (min-width:1024px) {
     .container {
         max-width: 1024px;
@@ -52,4 +64,8 @@
         display: flex;
         size: 100px;
     }
+    .active{
+        background-color: #fff;
+        color: black;
+     }
 }
