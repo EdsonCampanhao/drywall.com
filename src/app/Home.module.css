@@ -49,9 +49,11 @@
     align-items: center;
 }
 .product_wrapper{
+    box-sizing: border-box;
     padding: 8px;
     display: flex;
     overflow: auto;
+    width: 100vw;
     gap: 12px;
 }
 .container_cta{
@@ -80,11 +82,12 @@
     flex-direction: column;
 }
 .list_feedback{
+    box-sizing: border-box;
     display: flex;
     gap: 16px;
     width: 100vw;
     overflow: auto;
-    overflow-x: hidden;
+   
     padding: 12px;
 }
 
@@ -136,7 +139,7 @@
 .list_feedback{
     gap: 32px;
     max-width: 1024px;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 20px;
 }
 
