@@ -30,11 +30,11 @@ const products={
     },
     8:{
         nome:'cantoneira perfurada',
-        img:'/img/cantoneira_perfurada.jpeg',
+        img:'/img/cantoneira_perfura.jpeg',
     },
     9:{
         nome:'cantoneira',
-        img:'/img/cantoneira_perfura.jpeg',
+        img:'/img/cantoneira.jpeg',
     },
     10:{
         nome:'cerrote',
@@ -98,11 +98,11 @@ const products={
     },
     25:{
         nome:'lã de rocha',
-        img:'/img/larocha.jpeg',
+        img:'/img/LAROCHA.JPEG',
     },
     26:{
         nome:'lã de vidro',
-        img:'/img/lavidro.jpeg',
+        img:'/img/LAVIDRO.JPEG',
     },
     27:{
         nome:'massa cimenticia',

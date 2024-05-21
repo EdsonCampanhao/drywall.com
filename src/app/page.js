@@ -5,6 +5,7 @@ import { SlEarphonesAlt } from "react-icons/sl";
 import Product_card from '@/components/Product_card';
 import products from '@/components/products';
 import NewButton from '@/components/Button';
+import Card_feedback from '@/components/Card_feedback';
 
 
 
@@ -41,7 +42,7 @@ export default function Home() {
           {Object.keys(products).map((key) => {
             return (
               <li key={key}>
-                <Product_card path={products[key].img}  product={products[key].nome}></Product_card>
+                <Product_card path={products[key].img} product={products[key].nome}></Product_card>
               </li>
             )
           })
@@ -53,9 +54,37 @@ export default function Home() {
 
       <section className={style.container_cta}>
 
-          <div className={style.cta}>
-            <NewButton bgColor='#e6e600' color='black'> fazer cálculo! </NewButton>
-          </div>
+        <div className={style.cta}>
+          <NewButton bgColor='#e6e600' color='black'> fazer cálculo! </NewButton>
+        </div>
+
+      </section>
+
+      <section className={style.container_feedback}>
+
+        <h2> Feedsbacks sobre a nossa loja!</h2>
+
+        <ul className={style.list_feedback}>
+          <li>
+            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+          </li>
+          <li>
+            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+          </li>
+          <li>
+            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+          </li>
+          <li>
+            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+          </li>
+          <li>
+            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+          </li>
+          <li>
+            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+          </li>
+
+        </ul>
 
       </section>
 

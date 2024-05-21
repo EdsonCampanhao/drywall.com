@@ -8,7 +8,7 @@ export default function Card_feedback(props){
                 <VscFeedback stroke={8} size={32} />
             </div>
             <h3>{props.user}</h3>
-            <p className={style.text}>{props.feedback}</p>
+            <p className={style.text}>{props.children}</p>
         </div>
     )
 }
