@@ -6,6 +6,7 @@ import Product_card from '@/components/Product_card';
 import products from '@/components/products';
 import NewButton from '@/components/Button';
 import Card_feedback from '@/components/Card_feedback';
+import Link from 'next/link';
 
 
 
@@ -14,7 +15,8 @@ export default function Home() {
     <main >
 
       <section className={style.container}>
-        <img src='/img/banner.png' className={style.banner} />
+       <img src='/img/banner.png' className={style.banner} />
+        
       </section>
 
       <section className={style.container_differences}>

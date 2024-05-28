@@ -46,7 +46,9 @@ export default function Header(){
     return(
         <header className={styles.header}>
             <div className={styles.container}>
-                <img className={styles.logo} size={32} alt='logo da empresa' src='/img/logo.svg'/>
+                <Link href='/' onClick={(event)=>{desactiveRoute(event)}}>
+                    <img className={styles.logo} size={32} alt='logo da empresa' src='/img/logo.svg'/>
+                </Link>
                 <ul className={styles.lista}>
                     <li className={styles.lista_item}>
                         <Link href='/calculator' onClick={(event)=>{activeRoute(event)}} className={styles.lista_item_link}>Calculadora de materiais</Link >
