@@ -1,0 +1,24 @@
+.tittle{
+    margin: 24px;
+    text-align: center;
+}
+.container{
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    padding:0 8px;
+}
+.product_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 16px;
+}
+
+@media screen and (min-width: 1024px){
+    .product_list{
+        max-width: 1024px;
+        gap: 24px;
+        row-gap: 48px;
+    }
+}
