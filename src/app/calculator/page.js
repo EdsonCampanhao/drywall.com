@@ -10,8 +10,14 @@ function openForms(event){
 
     if(event.target[0].value == 'parede' || event.target[0].value == 'teto'){
         
-        console.log(forms[event.target.children[0].value])
-        
+        console.log(forms[event.target.children[0].value][1].type)
+        // for(i=1;i<=4;i++){
+
+        //     if(forms[event.target.children[0].value][i].type == )
+            
+        //    let element= document.createElement('')
+
+        // }
 
 
 
