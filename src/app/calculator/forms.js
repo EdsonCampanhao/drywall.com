@@ -11,15 +11,15 @@ const forms={
             }
         },
         2:{
-            type:'imput',
+            type:'input',
             ask:'Qual a altura do rebaixamento? (do teto ao forro)'
         },
         3:{
-            type:'imput',
+            type:'input',
             ask:'Qual a largura do teto?'
         },
         4:{
-            type:'imput',
+            type:'input',
             ask:'Qual o comprimento do teto?'
         },
     },
@@ -45,11 +45,11 @@ const forms={
             }
         },
         3:{
-            type:'imput',
+            type:'input',
             ask:'Qual a altura da parede?'
         },
         4:{
-            type:'imput',
+            type:'input',
             ask:'Qual a largura da parede?'
         }
     }
