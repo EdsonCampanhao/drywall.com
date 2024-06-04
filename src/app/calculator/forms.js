@@ -2,12 +2,12 @@ const forms={
     teto:{
         1:{
             type:'option',
+            ask:'O forro terá revestimento acústico?' ,
             options:
             { 
-                1:'O forro terá revestimento acústico?',
-                2:'não',
-                3:'lã de vidro',
-                4:'lã de rocha',
+                1:'não',
+                2:'lã de vidro',
+                3:'lã de rocha',
             }
         },
         2:{
@@ -26,22 +26,23 @@ const forms={
     parede:{
         1:{
             type:'option',
+            ask: 'Qual a expessura da ferragem?',
             options:
             {
-                1:'Qual a expessura da ferragem?',
-                2:'48mm (parede final com 8cm)',
-                3:'70mm (parede final com 10cm)',
-                4:'90mm (parede final com 12cm)',
+   
+                1:'48mm (parede final com 8cm)',
+                2:'70mm (parede final com 10cm)',
+                3:'90mm (parede final com 12cm)',
         }
         },
         2:{
             type:'option',
+            ask: 'O forro terá revestimento acústico?',
             options:
             { 
-                1:'O forro terá revestimento acústico?',
-                2:'não',
-                3:'lã de vidro',
-                4:'lã de rocha',
+                1:'não',
+                2:'lã de vidro',
+                3:'lã de rocha',
             }
         },
         3:{
