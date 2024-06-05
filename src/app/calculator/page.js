@@ -2,7 +2,6 @@
 import style from './calculator.module.css'
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useState } from 'react';
-import forms from './forms';
 import { FormTeto, FormParede } from '../../components/Forms/index'
 
 
@@ -20,7 +19,7 @@ export default function calculator() {
                     <img src='/img/icon_label.png' className={style.img}></img>
                 </div>
 
-                <div className={style.form} id='form'>
+                
 
                     {stateForm == false ?
                         <>
@@ -46,7 +45,7 @@ export default function calculator() {
 
 
 
-                </div>
+                
 
             </section>
 

@@ -17,12 +17,6 @@
 .img{
     width: 64px;
 }
-.form{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
 .form_field{
     box-shadow: none;
     border: none;
@@ -35,8 +29,5 @@
     background-color: transparent;
     box-shadow: none;
     border: none;
-    position: absolute;
-    right: -8px;
-    bottom: -38px;
-    
+   
 }

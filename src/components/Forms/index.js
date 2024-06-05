@@ -1,44 +1,89 @@
-import Imput from './Imput/index'
-import forms from '@/app/calculator/forms'
-import Select from './Select'
+
 import style from './Forms.module.css'
+import { useForm, SubmitHandler } from "react-hook-form"
+
 export function FormTeto() {
+
+    const { register, handleSubmit } = useForm()
+    const onSubmit = (data) => console.log(data)
+
     return (
         <>
-            {Object.keys(forms.teto).map((key) => {
-
-                if (forms.teto[key].type == 'input') {
-                    return <Imput text={forms.teto[key].ask} type='number' />
-                } else {
-                    return <Select text={forms.teto[key].ask} options={Object.values(forms.teto[key].options)}></Select>
-
-                }
-            })}
-            <div className={style.button_container}>
-                <button className={style.button}> gerar pdf </button>
-                <button className={style.button}> adicionar ao carrinho </button>
-            </div>
-
+            <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
+                <div className={style.container} >
+                    <label className={style.label}>O forro terá revestimento acústico?
+                        <select required {...register('forro acustico')} className={style.select} >
+                            <option>não</option>
+                            <option>lã de vidro</option>
+                            <option>lã de rocha</option>
+                        </select>
+                    </label>
+                </div>
+                <div className={style.container} >
+                    <label className={style.label} >Qual a altura do rebaixamento em metros? (do teto ao forro)
+                        <input required type='number' step="any"  {...register('altura rebaixamento')} className={style.input}></input>
+                    </label>
+                </div>
+                <div className={style.container}>
+                    <label className={style.label}>Qual a largura do teto em metros?
+                        <input required type='number' step="any"   {...register('largura teto')} className={style.input}></input>
+                    </label>
+                </div>
+                <div className={style.container} >
+                    <label className={style.label} >Qual o comprimento do teto em metros?
+                        <input required type='number' step="any"   {...register('comprimento teto')} className={style.input}></input>
+                    </label>
+                </div>
+                <div className={style.button_container}>
+                    <button className={style.button}> calcular material </button>
+                </div>
+            </form>
         </>
     )
 }
 export function FormParede() {
+    const { register, handleSubmit } = useForm()
+    const onSubmit = (data) => console.log(data)
+
     return (
         <>
-            {Object.keys(forms.parede).map((key) => {
+            <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
+                <div className={style.container} >
+                    <label className={style.label}>O forro terá revestimento acústico?
+                        <select required {...register('forro acustico')} className={style.select} >
 
-                if (forms.parede[key].type == 'input') {
-                    return <Imput text={forms.parede[key].ask} type='number' />
-                } else {
-                    return <Select text={forms.parede[key].ask} options={Object.values(forms.parede[key].options)}></Select>
+                            <option>não</option>
+                            <option>lã de vidro</option>
+                            <option>lã de rocha</option>
+                        </select>
+                    </label>
+                </div>
+                <div className={style.container} >
+                    <label className={style.label}>Qual a esspessura da ferragem?
+                        <select required {...register('espessura parede')} className={style.select} >
 
-                }
-            })}
-            <div className={style.button_container}>
-                <button className={style.button}> gerar pdf </button>
-                <button className={style.button}> adicionar ao carrinho </button>
-            </div>
+                            <option>48mm (parede final com 8cm)</option>
+                            <option>70mm (parede final com 10cm)</option>
+                            <option>90mm (parede final com 12cm)</option>
+                        </select>
+                    </label>
+                </div>
+                <div className={style.container}>
+                    <label className={style.label}>Qual a altura da parede em metros?
+                        <input required type='number' step="any"   {...register('pe direito')} className={style.input}></input>
+                    </label>
+                </div>
+                <div className={style.container} >
+                    <label className={style.label} >Qual a largura da parede em metros?
+                        <input required type='number' step="any"   {...register('largura parede')} className={style.input}></input>
+                    </label>
+                </div>
+                <div className={style.button_container}>
+                    <button className={style.button}> calcular material </button>
+                </div>
+            </form>
         </>
+
     )
 }
 
