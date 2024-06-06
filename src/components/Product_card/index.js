@@ -5,6 +5,7 @@ import { FaRegQuestionCircle } from "react-icons/fa";
 import products from '../products';
 
 export default function Product_card(props) {
+    const localStorage= window.localStorage
     localStorage.removeItem('ally-supports-cache'
     )
     return (
