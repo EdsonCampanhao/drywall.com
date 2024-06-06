@@ -45,7 +45,7 @@ export function FormParede() {
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => console.log(data)
 
-    return (
+    return (    
         <>
             <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
                 <div className={style.container} >
