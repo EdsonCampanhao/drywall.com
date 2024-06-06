@@ -1,3 +1,4 @@
+'use client'
 import style from './Product.module.css'
 import productsList from '@/components/products'
 import Product_card from '@/components/Product_card'
