@@ -4,28 +4,34 @@ import products from "@/components/products"
 import style from './shopping_cart.module.css'
 
 export default function shopping_cart() {
-    return (
 
-        <div className={style.container}>
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            return (
 
-            {
-                Object.keys(localStorage).map((key) => {
+                <div className={style.container}>
 
-                    const obj=JSON.parse(localStorage[parseInt(key)]);
-                    
-                    return (<CardCart
-                        key={key}
-                        id={key}
-                        src={products[key].img}
-                        alt={products[key].nome}
-                        name={products[key].nome} 
-                        value={obj[products[key].nome]} />)
+                    {
+                        Object.keys(localStorage).map((key) => {
 
-                }
-                )
-            }
-            <CardCart src={products[1].img} alt={products[1].nome} name={products[1].nome} value={3} >  </CardCart>
-        </div>
+                            const obj = JSON.parse(localStorage[parseInt(key)]);
 
-    )
+                            return (<CardCart
+                                key={key}
+                                id={key}
+                                src={products[key].img}
+                                alt={products[key].nome}
+                                name={products[key].nome}
+                                value={obj[products[key].nome]} />)
+
+                        }
+                        )
+                    }
+                    <CardCart src={products[1].img} alt={products[1].nome} name={products[1].nome} value={3} >  </CardCart>
+                </div>
+
+            )
+        }
+    }, []);
+
 }
