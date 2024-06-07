@@ -2,6 +2,7 @@
 import CardCart from "@/components/CardCart/CardCart"
 import products from "@/components/products"
 import style from './shopping_cart.module.css'
+import { useEffect } from "react"
 
 export default function shopping_cart() {
 
