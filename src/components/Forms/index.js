@@ -1,36 +1,51 @@
 
 import style from './Forms.module.css'
 import { useForm, SubmitHandler } from "react-hook-form"
+import { useRouter } from 'next/router';
 
 export function FormTeto() {
 
+
     const { register, handleSubmit } = useForm()
 
+
     const onSubmit = (data) => {
-       localStorage.clear()
+        localStorage.clear()
 
-       data.larguraTeto=parseInt(data.larguraTeto)
-       data.comprimentoTeto=parseInt(data.comprimentoTeto)
+        data.larguraTeto = parseInt(data.larguraTeto)
+        data.comprimentoTeto = parseInt(data.comprimentoTeto)
 
-       const materials = {
-       36:{ 'placa st':Math.round((data.larguraTeto*data.comprimentoTeto)/2.16)},
-       9:{'cantoneira':Math.round((data.larguraTeto+data.comprimentoTeto)*2/3)},
-       1:{'perfil f530':Math.round((data.larguraTeto*data.comprimentoTeto)*2/3)},
-       39:{'tirante':(Math.round((data.larguraTeto*data.comprimentoTeto)*2/3))*2},
-       2:{'regulador':(Math.round((data.larguraTeto*data.comprimentoTeto)*2/3))*2},
-       32:{'caixa de parafuso':Math.round(((data.larguraTeto*data.comprimentoTeto)/2.16)*30/100)},
-       18:{'fita telada':Math.ceil(((data.larguraTeto*data.comprimentoTeto)*2)/90)},
-       28:{'massa drywall':Math.round((((data.larguraTeto*data.comprimentoTeto)/2/5)))},
-       25:{'lã de rocha':Math.round((data.larguraTeto*data.comprimentoTeto)/4.32)},
-       26:{'lã de vidro':Math.round((data.larguraTeto*data.comprimentoTeto)/15)}
-       }
-       
+        const materials = {
+            36: { 'placa st': Math.round((data.larguraTeto * data.comprimentoTeto) / 2.16) },
+            9: { 'cantoneira': Math.round((data.larguraTeto + data.comprimentoTeto) * 2 / 3) },
+            1: { 'perfil f530': Math.round((data.larguraTeto * data.comprimentoTeto) * 2 / 3) },
+            39: { 'tirante': (Math.round((data.larguraTeto * data.comprimentoTeto) * 2 / 3)) * 2 },
+            2: { 'regulador': (Math.round((data.larguraTeto * data.comprimentoTeto) * 2 / 3)) * 2 },
+            32: { 'caixa de parafuso': Math.ceil(((data.larguraTeto * data.comprimentoTeto) / 2.16) * 30 / 100) },
+            18: { 'fita telada': Math.ceil(((data.larguraTeto * data.comprimentoTeto) * 2) / 90) },
+            28: { 'massa drywall': Math.round((((data.larguraTeto * data.comprimentoTeto) / 2 / 5))) },
+            25: { 'lã de rocha': Math.round((data.larguraTeto * data.comprimentoTeto) / 4.32) },
+            26: { 'lã de vidro': Math.round((data.larguraTeto * data.comprimentoTeto) / 15) }
+        }
 
-       Object.keys(materials).map((key)=>{
-        localStorage.setItem(parseInt(key),JSON.stringify(materials[key]))
-       })
 
-       
+        Object.keys(materials).map((key) => {
+            if(key=='25'){
+                if(data.forroAcustico=='lã de rocha'){
+                    localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+                }
+
+            }else if(key=='26'){
+                if(data.forroAcustico=='lã de vidro'){
+                    localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+                }
+                
+            }else if(key != '25' &&  key != '26')localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+        })
+
+
+
+
     }
 
 
@@ -73,7 +88,7 @@ export function FormParede() {
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => console.log(data)
 
-    return (    
+    return (
         <>
             <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
                 <div className={style.container} >
