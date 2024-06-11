@@ -2,6 +2,7 @@
 import style from './Forms.module.css'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useRouter } from 'next/router';
+import products from '../products';
 
 export function FormTeto() {
 
@@ -15,32 +16,34 @@ export function FormTeto() {
         data.larguraTeto = parseInt(data.larguraTeto)
         data.comprimentoTeto = parseInt(data.comprimentoTeto)
 
+        let areaQ = data.larguraTeto * data.comprimentoTeto
+
         const materials = {
-            36: { 'placa st': Math.round((data.larguraTeto * data.comprimentoTeto) / 2.16) },
+            36: { 'placa st': Math.round(areaQ / 2.16) },
             9: { 'cantoneira': Math.round((data.larguraTeto + data.comprimentoTeto) * 2 / 3) },
-            1: { 'perfil f530': Math.round((data.larguraTeto * data.comprimentoTeto) * 2 / 3) },
-            39: { 'tirante': (Math.round((data.larguraTeto * data.comprimentoTeto) * 2 / 3)) * 2 },
-            2: { 'regulador': (Math.round((data.larguraTeto * data.comprimentoTeto) * 2 / 3)) * 2 },
-            32: { 'caixa de parafuso': Math.ceil(((data.larguraTeto * data.comprimentoTeto) / 2.16) * 30 / 100) },
-            18: { 'fita telada': Math.ceil(((data.larguraTeto * data.comprimentoTeto) * 2) / 90) },
-            28: { 'massa drywall': Math.round((((data.larguraTeto * data.comprimentoTeto) / 2 / 5))) },
-            25: { 'lã de rocha': Math.round((data.larguraTeto * data.comprimentoTeto) / 4.32) },
-            26: { 'lã de vidro': Math.round((data.larguraTeto * data.comprimentoTeto) / 15) }
+            40: { 'perfil f530': Math.round(areaQ * 2 / 3) },
+            39: { 'tirante': (Math.round(areaQ * 2 / 3)) * 2 },
+            41: { 'regulador': (Math.round(areaQ * 2 / 3)) * 2 },
+            32: { 'caixa de parafuso': Math.ceil((areaQ / 2.16) * 30 / 1000) },
+            18: { 'fita telada': Math.ceil((areaQ * 2) / 90) },
+            28: { 'massa drywall': Math.round(((areaQ / 2 / 5))) },
+            25: { 'lã de rocha': Math.round(areaQ / 4.32) },
+            26: { 'lã de vidro': Math.round(areaQ / 15) }
         }
 
 
         Object.keys(materials).map((key) => {
-            if(key=='25'){
-                if(data.forroAcustico=='lã de rocha'){
+            if (key == '25') {
+                if (data.forroAcustico == 'lã de rocha') {
                     localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
                 }
 
-            }else if(key=='26'){
-                if(data.forroAcustico=='lã de vidro'){
+            } else if (key == '26') {
+                if (data.forroAcustico == 'lã de vidro') {
                     localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
                 }
-                
-            }else if(key != '25' &&  key != '26')localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+
+            } else if (key != '25' && key != '26') localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
         })
 
 
@@ -86,7 +89,76 @@ export function FormTeto() {
 }
 export function FormParede() {
     const { register, handleSubmit } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+
+        localStorage.clear()
+
+        data.larguraParede = parseInt(data.larguraParede)
+        data.peDireito = parseInt(data.peDireito)
+        data.espessuraParede = data.espessuraParede.slice(0, 2)
+
+
+
+        let areaQ = data.larguraParede * data.peDireito
+
+        const materials = {
+            36: { 'placa st': Math.round((areaQ / 2.16) * 2) },
+            32: { 'caixa de parafuso': Math.ceil((areaQ / 2.16) * 30 / 1000) },
+            18: { 'fita telada': Math.ceil((areaQ * 2) / 90) },
+            28: { 'massa drywall': Math.round(((areaQ / 5))) },
+            25: { 'lã de rocha': Math.round(areaQ / 4.32) },
+            26: { 'lã de vidro': Math.round(areaQ / 15) },
+            guia: {
+                quantidade: (data.larguraParede + data.peDireito * 2 / 3)
+
+            },
+            montante: {
+                quantidade: (data.peDireito / 0.6)
+
+            }
+        }
+
+
+        Object.keys(materials).map((key) => {
+            if (key == '25') {
+                if (data.forroAcustico == 'lã de rocha') {
+                    localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+                }
+
+            } else if (key == '26') {
+                if (data.forroAcustico == 'lã de vidro') {
+                    localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+                }
+
+            } else if (key == 'guia') {
+
+                console.log(data.espessuraParede)
+
+                switch (data.espessuraParede) {
+
+                    case '48':
+                        localStorage.setItem(22, `{"${products[22].nome}":${Math.round(materials.guia.quantidade)}}`);
+                        localStorage.setItem(29, `{"${products[29].nome}":${Math.round(materials.montante.quantidade)}}`);
+                        break;
+
+                    case '70':
+                        localStorage.setItem(23, `{"${products[23].nome}":${Math.round(materials.guia.quantidade)}}`);
+                        localStorage.setItem(30, `{"${products[30].nome}":${Math.round(materials.montante.quantidade)}}`);
+                        break;
+
+                    case '90':
+                        localStorage.setItem(24, `{"${products[24].nome}":${Math.round(materials.guia.quantidade)}}`);
+                        localStorage.setItem(31, `{"${products[31].nome}":${Math.round(materials.montante.quantidade)}}`);
+                        break;
+                }
+
+            } else if (key != 'montante') {
+                localStorage.setItem(parseInt(key), JSON.stringify(materials[key]))
+            }
+        })
+
+
+    }
 
     return (
         <>

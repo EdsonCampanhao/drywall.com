@@ -156,6 +156,14 @@ const products={
         nome:'tirante',
         img:'/img/TIRANTE.JPEG',
     },
+    40:{
+        nome:'perfil f530',
+        img:'/img/perfilf530.jpeg',
+    },
+    41:{
+        nome:'regulador',
+        img:'/img/regulador.jpeg',
+    }
 }
 
 export default products
