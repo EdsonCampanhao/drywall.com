@@ -1,21 +1,25 @@
 'use client'
 import style from './calculator.module.css'
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 import { FormTeto, FormParede } from '../../components/Forms/index'
+import Link from 'next/link';
+import { IoMdCart } from "react-icons/io";
+
 
 
 
 export default function calculator() {
+
+    
     const [stateForm, setStateForm] = useState(false)
     const [typeForm, setTypeForm] = useState('')
-
-
 
     return (
         <>
             <section className={style.container}>
                 <div className={style.container_img}>
+
                     <img src='/img/icon_label.png' className={style.img}></img>
                 </div>
 
@@ -36,7 +40,7 @@ export default function calculator() {
                         </div>
 
 
-                        
+
 
                         <button className={style.button} onClick={(event) => {
                             event.preventDefault();
@@ -49,8 +53,11 @@ export default function calculator() {
                         }}>
                             <FaArrowAltCircleRight size={24} fill='rgb(136, 135, 135)' />
                         </button>
+                        
                     </>
-                    : typeForm == 'parede' ? <FormParede></FormParede> : <FormTeto></FormTeto>
+                    : typeForm == 'parede' ? <FormParede  ></FormParede> : <FormTeto ></FormTeto>
+
+
 
                 }
 

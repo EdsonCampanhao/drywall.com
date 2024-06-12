@@ -15,6 +15,8 @@ export default function shopping_cart() {
 
     return (
         <div className={style.container}>
+
+            <h2 className={style.title}> lista de compras</h2>
             {load ? (
                 Object.keys(localStorage).length > 0 ? (
                     Object.keys(localStorage).map((key) => {

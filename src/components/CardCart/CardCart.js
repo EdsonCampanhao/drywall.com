@@ -17,7 +17,7 @@ function CardCart(props) {
                 <h2> {props.name} </h2>
             </div>
             <div className={style.quant_field}>
-                <h2> Quantidade </h2>
+                <p className={style.text}> Quantidade </p>
                 <div className={style.quant_field__buttons}>
 
                     <p className={style.button} onClick={

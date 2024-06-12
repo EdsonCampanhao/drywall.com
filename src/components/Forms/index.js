@@ -1,17 +1,29 @@
+'use client'
 
 import style from './Forms.module.css'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useRouter } from 'next/router';
 import products from '../products';
+import { useState, useEffect } from 'react';
+import { IoMdCart } from "react-icons/io";
+import Link from 'next/link';
 
-export function FormTeto() {
 
+
+
+
+export function FormTeto(props) {
 
     const { register, handleSubmit } = useForm()
+    const [visible, setVisible] = useState(false)
+
 
 
     const onSubmit = (data) => {
+        setVisible(true)
         localStorage.clear()
+
+        console.log(props.ref)
 
         data.larguraTeto = parseInt(data.larguraTeto)
         data.comprimentoTeto = parseInt(data.comprimentoTeto)
@@ -48,7 +60,6 @@ export function FormTeto() {
 
 
 
-
     }
 
 
@@ -81,15 +92,28 @@ export function FormTeto() {
                     </label>
                 </div>
                 <div className={style.button_container}>
-                    <button className={style.button}> calcular material </button>
+                    <button className={style.button} > calcular material </button>
                 </div>
             </form>
+
+            <Link href="/shopping_cart" >
+
+                <div style={visible ? { backgroundColor: 'blue', display: 'flex' } : { display: 'none' }}
+                    className={style.carrinho}>
+                    <p>ir para o carrinho</p>
+                    <IoMdCart size={32}
+                    />
+                </div >
+            </Link>
         </>
     )
 }
-export function FormParede() {
+export function FormParede(props) {
     const { register, handleSubmit } = useForm()
+    const [visible, setVisible] = useState(false)
+
     const onSubmit = (data) => {
+        setVisible(true)
 
         localStorage.clear()
 
@@ -194,9 +218,24 @@ export function FormParede() {
                     </label>
                 </div>
                 <div className={style.button_container}>
-                    <button className={style.button}> calcular material </button>
+                    <button className={style.button} > calcular material </button>
                 </div>
             </form>
+
+
+            <Link href="/shopping_cart" >
+
+                <div style={visible ? { backgroundColor: 'blue', display: 'flex' } : { display: 'none' }}
+                    className={style.carrinho}>
+                    <p>ir para o carrinho</p>
+                    <IoMdCart size={32}
+                    />
+                </div >
+            </Link>
+
+
+
+
         </>
 
     )
