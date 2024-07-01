@@ -15,8 +15,8 @@ export default function Home() {
     <main >
 
       <section className={style.container}>
-       <img src='/img/banner.png' className={style.banner} />
-        
+        <img src='/img/banner.png' className={style.banner} />
+
       </section>
 
       <section className={style.container_differences}>
@@ -54,10 +54,20 @@ export default function Home() {
 
       </section>
 
-      <section className={style.container_cta}>
+      <section className={style.cta_container}>
 
-        <div className={style.cta}>
-          <NewButton bgColor='#e6e600' color='black'> fazer cálculo! </NewButton>
+        <div className={style.cta_div}>
+          <div className={style.cta_description}>
+            <h2>Vai começar uma obra?</h2>
+            <div className={style.cta_text}>
+              <p>calcule seu material, sem custo, conosco!</p>
+              <Link href='/calculator'>
+                <div className={style.cta_button}>
+                  <p>calcular!</p>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
 
       </section>
@@ -68,22 +78,17 @@ export default function Home() {
 
         <ul className={style.list_feedback}>
           <li>
-            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+            <Card_feedback user='Bruce Campanhão'> ótimo atendimento, estão de parabens! </Card_feedback>
           </li>
           <li>
-            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+            <Card_feedback user='Misael'> preço baixo e um ótimo cafezinho
+              ! </Card_feedback>
           </li>
           <li>
-            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+            <Card_feedback user='José'> melhor loja de itaboraí</Card_feedback>
           </li>
           <li>
-            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
-          </li>
-          <li>
-            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
-          </li>
-          <li>
-            <Card_feedback user='José'> ótimo atendimento.</Card_feedback>
+            <Card_feedback user='Edson Gabryel'> pessoal muito solicito para ajudar! </Card_feedback>
           </li>
 
         </ul>

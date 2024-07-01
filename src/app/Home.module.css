@@ -1,29 +1,30 @@
-
-.container
-{
+.container {
     display: flex;
     justify-content: center;
-    padding:0 8px;
+    padding: 0 8px;
     background-image: url('/img/faxada.png');
     background-position: center;
     background-size: contain;
     height: 400px;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     margin-bottom: 24px;
 
 }
-.banner{
+
+.banner {
     display: none;
-    
+
 }
-.container_differences{
+
+.container_differences {
     display: flex;
     justify-content: center;
-    padding:16px 8px;
+    padding: 16px 8px;
     background-image: url('/img/blocod.png');
     background-size: 200px;
 }
-.differences{
+
+.differences {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,14 +34,16 @@
     padding: 10px 25px;
     text-align: center;
 }
-.differences_item{
+
+.differences_item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
     width: 115px;
 }
-.container_products{
+
+.container_products {
     margin: 24px 0;
     display: flex;
     flex-direction: column;
@@ -48,7 +51,8 @@
     gap: 24px;
     align-items: center;
 }
-.product_wrapper{
+
+.product_wrapper {
     box-sizing: border-box;
     padding: 8px;
     display: flex;
@@ -56,24 +60,49 @@
     width: 100vw;
     gap: 12px;
 }
-.container_cta{
-    margin: 32px 0;
+
+.cta_container {
+    padding: 8px;
     display: flex;
     justify-content: center;
 }
-.cta{
+
+.cta_div {
+    border: 20px ridge rgba(160, 167, 168, 0.81);
+    padding: 8px;
+    box-sizing: border-box;
+    max-width: 370px;
     display: flex;
+    flex-direction: column;
+    background-color: #c16464;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cta_description h2 {
+    max-width: 370px;
+    font-size: 82px;
+}
+
+.cta_text {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cta_button {
+
+    width: 90px;
+    height: 50px;
+    display: flex;
+    margin-top: 16px;
     justify-content: center;
     align-items: center;
-    background-image:url('/img/calculadora.png');
-    background-position: center;
-    background-size: 400px;
-    background-repeat: no-repeat;
-    width: 370px;
-    height: 200px;
-    padding-top: 40px;
+    background-color: #b3aaaa;
+    border: 1px black solid ;
 }
-.container_feedback{
+
+.container_feedback {
     text-align: center;
     margin: 24px 0;
     gap: 30px;
@@ -81,65 +110,78 @@
     align-items: center;
     flex-direction: column;
 }
-.list_feedback{
+
+.list_feedback {
     box-sizing: border-box;
     display: flex;
     gap: 16px;
     width: 100vw;
     overflow: auto;
-   
+
     padding: 12px;
 }
 
 @media screen and (min-width:1024px) {
-.container{
+    .container {
         background-image: none;
-}
-.banner{
-    width: 1024px;
-    display: block;
-}
+    }
 
-.container_differences{
-    padding:48px 8px;
-    background-size: 300px;
-}
-.differences{
-    display: flex;
-    justify-content: space-around;
-    width: 600px;
-    border-radius: 100px;
-    padding: 18px 25px;
-}
-.differences_item{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 18px;
-    width: 115px;
-}
-.container_products{
-    margin: 48px 0;
-   
-}
-.product_wrapper{
-    max-width: 1024px;
-}
-.container_cta{
-    margin: 64px 0;
-}
-.cta{
-    width: 1024px;
-    background-size: 1024px;
-}
-.container_feedback{
-    align-items: center;
-}
-.list_feedback{
-    gap: 32px;
-    max-width: 1024px;
-    padding: 20px;
-}
+    .banner {
+        width: 1024px;
+        display: block;
+    }
+
+    .container_differences {
+        padding: 48px 8px;
+        background-size: 300px;
+    }
+
+    .differences {
+        display: flex;
+        justify-content: space-around;
+        width: 600px;
+        border-radius: 100px;
+        padding: 18px 25px;
+    }
+
+    .differences_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 18px;
+        width: 115px;
+    }
+
+    .container_products {
+        margin: 48px 0;
+
+    }
+
+    .product_wrapper {
+        max-width: 1024px;
+    }
+
+    .container_cta {
+        margin: 64px 0;
+    }
+
+    .cta {
+        width: 1024px;
+        background-size: 1024px;
+    }
+
+    .container_feedback {
+        align-items: center;
+    }
+
+    .list_feedback {
+        gap: 32px;
+        max-width: 1024px;
+        padding: 20px;
+    }
+    .cta_div{
+        max-width: 1024px;
+    }
 
 }
