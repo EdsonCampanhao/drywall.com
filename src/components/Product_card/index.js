@@ -7,19 +7,15 @@ import products from '../products';
 
 export default function Product_card(props) {
 
-    
-    
-   
-
-
+    let audio = new Audio('\click_effect.mp3')
     return (
         <div className={style.card}>
             <img src={props.path} className={style.product} />
             <h3 className={style.product_text}>{props.product}</h3>
 
             <div className={style.car}>
-                <IoMdCart size={32} onClick={(e) => {        
-                      if (Object.keys(localStorage).indexOf(props.product) < 0) {
+                <IoMdCart size={32} onClick={(e) => {
+                    if (Object.keys(localStorage).indexOf(props.product) < 0) {
 
                         for (let product in products) {
                             if (products[product].nome == props.product) {
@@ -32,10 +28,14 @@ export default function Product_card(props) {
                             }
                         }
                     }
-                    e.target.parentNode.style.backgroundColor="gray";
-                    audioClick.play()
-                    console.log(e.target.parentNode)
-                    
+
+                    if (e.target.parentNode.style.backgroundColor != 'gray') {
+                        e.target.parentNode.style.backgroundColor = "gray";
+                        audio.play()
+                    }
+
+
+
 
                 }} />
             </div>
