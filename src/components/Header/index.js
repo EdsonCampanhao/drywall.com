@@ -56,9 +56,6 @@ export default function Header(){
                     <li className={styles.lista_item}>
                         <Link href='/products' onClick={(event)=>{activeRoute(event)}} className={styles.lista_item_link}> produtos </Link >
                     </li>
-                    <li className={styles.lista_item}>
-                        <Link href='/institucional' onClick={(event)=>{activeRoute(event)}} className={styles.lista_item_link}> institucional </Link >
-                    </li>
                 </ul>
 
                 <Link href='/shopping_cart' onClick={(event)=>{desactiveRoute(event)}} className={styles.link_cart} >

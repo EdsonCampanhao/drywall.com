@@ -23,7 +23,6 @@ export default function MenuHamburguer() {
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/shopping_cart' className={styles.item}>carrinho</Link></MenuItem>
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/calculator' className={styles.item}>calculadora de materiais</Link></MenuItem>
                     <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/products' className={styles.item}>produtos</Link></MenuItem>
-                    <MenuItem bgColor='transparent' border='none' display='flex' justifyContent='center'><Link href='/institucional' className={styles.item}>institucional</Link></MenuItem>
                 </MenuList>
             </Menu>
         </div>

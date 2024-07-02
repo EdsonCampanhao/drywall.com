@@ -4,7 +4,12 @@ import { IoMdCart } from "react-icons/io";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import products from '../products';
 
+
 export default function Product_card(props) {
+
+    
+    
+   
 
 
     return (
@@ -13,7 +18,7 @@ export default function Product_card(props) {
             <h3 className={style.product_text}>{props.product}</h3>
 
             <div className={style.car}>
-                <IoMdCart size={32} onClick={() => {        
+                <IoMdCart size={32} onClick={(e) => {        
                       if (Object.keys(localStorage).indexOf(props.product) < 0) {
 
                         for (let product in products) {
@@ -27,7 +32,9 @@ export default function Product_card(props) {
                             }
                         }
                     }
-
+                    e.target.parentNode.style.backgroundColor="gray";
+                    audioClick.play()
+                    console.log(e.target.parentNode)
                     
 
                 }} />

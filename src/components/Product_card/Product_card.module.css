@@ -20,6 +20,9 @@
 .product_text{
     font-size: 16px;
 }
+.car svg path{
+    pointer-events: none;
+}
 .car{
     padding: 4px;
     border-radius: 50px;
