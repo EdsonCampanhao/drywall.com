@@ -125,7 +125,7 @@ const products={
         img:'/img/MONTANTES.JPEG',
     },
     32:{
-        nome:'caixa de parafuso',
+        nome:'caixa de parafuso 13',
         img:'/img/PARAFUSO.JPEG',
     },
     33:{
