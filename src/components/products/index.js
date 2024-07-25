@@ -105,11 +105,11 @@ const products={
         img:'/img/LAVIDRO.JPEG',
     },
     27:{
-        nome:'massa cimenticia',
+        nome:'massa cimenticia 5kg',
         img:'/img/MASSA_CIMENTICIA.JPEG',
     },
     28:{
-        nome:'massa drywall',
+        nome:'massa drywall 5kg',
         img:'/img/MASSA_DRYWALL.JPEG',
     },
     29:{
@@ -153,7 +153,7 @@ const products={
         img:'/img/tabica.jpeg',
     },
     39:{
-        nome:'tirante',
+        nome:'tirante 50cm',
         img:'/img/TIRANTE.JPEG',
     },
     40:{
