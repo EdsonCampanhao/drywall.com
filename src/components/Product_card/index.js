@@ -3,11 +3,19 @@ import style from './Product_card.module.css';
 import { IoMdCart } from "react-icons/io";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import products from '../products';
+import { useEffect, useState } from 'react';
 
 
 export default function Product_card(props) {
 
-    let audio = new Audio('\click_effect.mp3')
+    const [audio, setAudio] = useState(null);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const newAudio = new Audio('/click_effect.mp3');
+            setAudio(newAudio);
+        }
+    }, []);
     return (
         <div className={style.card}>
             <img src={props.path} className={style.product} />

@@ -32,7 +32,7 @@ function CardCart(props) {
 
                             localStorage.setItem(props.id, JSON.stringify(obj))
 
-                            console.log(localStorage)
+                            
                         }
 
                     }>+</p>
@@ -43,21 +43,21 @@ function CardCart(props) {
                         if (number > 1) {
                             setNumber(number - 1)
 
-                            console.log(typeof (props.id))
-
                             let obj = JSON.parse(localStorage[parseInt(props.id)])
 
                             { obj[props.name] = number - 1 }
 
                             localStorage.setItem(props.id, JSON.stringify(obj))
 
-                            console.log(localStorage)
+                            
 
 
                         } else {
-                            console.log(localStorage)
-                            elementRef.current.remove()
+                            delete localStorage[parseInt(props.id)]
 
+                          
+                            
+                            elementRef.current.remove()
                         }
                     }}>-</p>
 
